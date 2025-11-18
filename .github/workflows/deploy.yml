@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: us-west-2
   EKS_CLUSTER_NAME: vulnerable-app-demo
   ECR_REPOSITORY: vulnerable-app-demo
 
