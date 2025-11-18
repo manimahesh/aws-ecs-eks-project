@@ -1,0 +1,14 @@
+# AWS Configuration
+aws_region = "us-east-1"
+environment = "demo"
+
+# EKS Configuration
+cluster_name = "vulnerable-app-demo"
+vpc_cidr     = "10.0.0.0/16"
+
+# GitHub Configuration
+github_org  = "your-github-username-or-org"
+github_repo = "aws-ecs-eks-project"
+
+# ECR Configuration
+ecr_repository_name = "vulnerable-app-demo"
