@@ -140,7 +140,6 @@ The GitHub Actions workflow will automatically:
 2. Build the Docker image
 3. Push the image to ECR
 4. Deploy to EKS
-5. Run a security scan (informational only)
 
 ### 7. Access the Application
 
@@ -205,20 +204,9 @@ kubectl get svc -n vulnerable-demo
 kubectl logs -f deployment/vulnerable-app -n vulnerable-demo
 ```
 
-### View Security Scan Results
-
-GitHub Actions includes a Trivy security scan that will display vulnerabilities:
-
-1. Go to your GitHub repository
-2. Click on "Actions"
-3. Select the latest workflow run
-4. Expand the "Run security scan" step
-
-You should see multiple HIGH and CRITICAL vulnerabilities listed.
-
 ## Security Scan Examples
 
-You can run security scans locally:
+You can run security scans locally to detect the vulnerabilities:
 
 ```bash
 # Using npm audit
@@ -227,16 +215,14 @@ npm audit
 # Using Snyk (requires Snyk account)
 npx snyk test
 
-# Using Trivy on the Docker image
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
-  aquasec/trivy image vulnerable-app-demo:latest
+# Using other scanning tools as needed for your educational demonstration
 ```
 
 ## Educational Use Cases
 
 This project can be used to demonstrate:
 
-1. **Vulnerability Scanning**: Show how tools like npm audit, Snyk, or Trivy detect vulnerable dependencies
+1. **Vulnerability Scanning**: Show how tools like npm audit, Snyk, or other scanning tools detect vulnerable dependencies
 2. **Supply Chain Security**: Demonstrate the importance of keeping dependencies up to date
 3. **CI/CD Security**: Show how to integrate security scanning into deployment pipelines
 4. **Container Security**: Demonstrate image scanning and vulnerability management
