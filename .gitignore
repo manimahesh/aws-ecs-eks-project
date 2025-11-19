@@ -34,3 +34,6 @@ logs/
 # Build outputs
 dist/
 build/
+
+# K8s
+K8s-security-profile-panw-18-Nov-25-2PM.values.yaml
